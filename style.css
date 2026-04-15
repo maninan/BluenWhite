@@ -10,17 +10,17 @@
         }
 
         :root {
-            --navy: #0B1622;
-            --dark: #0F2030;
-            --card: #152638;
-            --border: #1E3A52;
-            --teal: #00C4A8;
-            --teal-dim: #009E87;
+            --navy: #ffffff;
+            --dark: #f0f2f5;
+            --card: #ffffff;
+            --border: #ccd0d5;
+            --teal: #1877F2;
+            --teal-dim: #166fe5;
             --white: #FFFFFF;
-            --gray: #7A9DB0;
-            --text: #B8D0DC;
-            --light: #EEF4F8;
-            --red: #E05050;
+            --gray: #65676B;
+            --text: #050505;
+            --light: #EBEDF0;
+            --red: #E41E3F;
             --font-display: 'Barlow Condensed', sans-serif;
             --font-body: 'Barlow', sans-serif;
         }
@@ -32,7 +32,7 @@
         body {
             background: radial-gradient(circle at top right, #102A43, var(--navy) 60%);
             background-attachment: fixed;
-            color: var(--white);
+            color: var(--text);
             font-family: var(--font-body);
             font-size: 16px;
             line-height: 1.7;
@@ -96,7 +96,7 @@
         }
 
         strong {
-            color: var(--white);
+            color: var(--text);
             font-weight: 600;
         }
 
@@ -127,7 +127,7 @@
         }
 
         nav.scrolled {
-            background: rgba(11, 22, 34, .96);
+            background: rgba(255, 255, 255, 0.96);
             backdrop-filter: blur(12px);
             padding: 14px 0;
             border-bottom: 1px solid var(--border);
@@ -160,17 +160,17 @@
 
         .nav-links a {
             font-size: 13px;
-            font-weight: 500;
-            color: var(--gray);
+            font-weight: 600;
+            color: var(--text);
             transition: color .2s;
         }
 
         .nav-links a:hover {
-            color: var(--white);
+            color: var(--teal);
         }
 
         .btn-nav {
-            background: var(--teal);
+            background: var(--red);
             color: var(--navy) !important;
             font-size: 12px;
             font-weight: 700;
@@ -181,7 +181,7 @@
         }
 
         .btn-nav:hover {
-            background: #00dfc0;
+            background: #d01835;
             transform: translateY(-1px);
         }
 
@@ -197,7 +197,7 @@
             display: block;
             width: 24px;
             height: 2px;
-            background: var(--white);
+            background: var(--text);
             border-radius: 2px;
             transition: all .3s;
         }
@@ -238,7 +238,7 @@
             font-family: var(--font-display);
             font-size: 32px;
             font-weight: 700;
-            color: var(--white);
+            color: var(--text);
         }
 
         .mobile-menu a:hover {
@@ -263,7 +263,7 @@
             z-index: 0;
             /* AI-generated capsule house image via Picsum seeded to look architectural */
             background:
-                linear-gradient(to right, rgba(11, 22, 34, .92) 45%, rgba(11, 22, 34, .4) 100%),
+                linear-gradient(to right, rgba(235, 237, 240, 0.95) 45%, rgba(235, 237, 240, 0.7) 100%),
                 url('https://images.unsplash.com/photo-1618221118493-9cfa1a1c00da?w=1600&q=80') center/cover no-repeat;
         }
 
@@ -322,8 +322,8 @@
 
         .btn-outline {
             display: inline-block;
-            border: 1px solid rgba(255, 255, 255, .3);
-            color: var(--white);
+            border: 1px solid var(--teal);
+            color: var(--teal);
             font-size: 14px;
             font-weight: 500;
             padding: 14px 28px;
@@ -501,7 +501,7 @@
             height: 220px;
             overflow: hidden;
             position: relative;
-            background: #0a1824;
+            background: var(--light);
         }
 
         .product-img-inner {
@@ -551,7 +551,7 @@
         }
 
         .spec-val {
-            color: var(--white);
+            color: var(--text);
             font-weight: 500;
         }
 
@@ -570,8 +570,9 @@
         }
 
         .product-card:hover .card-cta {
-            background: var(--teal);
-            color: var(--navy);
+            background: var(--red);
+            color: var(--text);
+            border-color: var(--red);
             border-color: var(--teal);
         }
 
@@ -770,7 +771,7 @@
         }
 
         .value-text strong {
-            color: var(--white);
+            color: var(--text);
         }
 
         /* ═══════════════════════════════
@@ -803,7 +804,7 @@
         .blog-img {
             height: 180px;
             overflow: hidden;
-            background: #0a1824;
+            background: var(--light);
         }
 
         .blog-img img {
@@ -917,7 +918,7 @@
         .contact-val {
             font-size: 14px;
             font-weight: 600;
-            color: var(--white);
+            color: var(--text);
         }
 
         /* FORM */
@@ -957,10 +958,10 @@
         .form-group input,
         .form-group select,
         .form-group textarea {
-            background: #0a1824;
+            background: var(--light);
             border: 1px solid var(--border);
             border-radius: 8px;
-            color: var(--white);
+            color: var(--text);
             font-family: var(--font-body);
             font-size: 14px;
             padding: 12px 14px;
@@ -1016,7 +1017,7 @@
    FOOTER
 ═══════════════════════════════ */
         footer {
-            background: #080F18;
+            background: var(--card);
             border-top: 1px solid var(--border);
             padding: 48px 0 28px;
         }
@@ -1040,7 +1041,7 @@
         .footer-col h4 {
             font-size: 12px;
             font-weight: 700;
-            color: var(--white);
+            color: var(--text);
             letter-spacing: .08em;
             text-transform: uppercase;
             margin-bottom: 14px;
@@ -1141,7 +1142,7 @@
             height: 36px;
             background: var(--border);
             border: none;
-            color: var(--white);
+            color: var(--text);
             border-radius: 50%;
             font-size: 18px;
             cursor: pointer;
@@ -1214,7 +1215,7 @@
         .modal-spec-val {
             font-size: 14px;
             font-weight: 600;
-            color: var(--white);
+            color: var(--text);
         }
 
         .modal-includes {
@@ -1224,7 +1225,7 @@
         .modal-includes h4 {
             font-size: 14px;
             font-weight: 700;
-            color: var(--white);
+            color: var(--text);
             margin-bottom: 10px;
         }
 
@@ -1378,7 +1379,7 @@
 .btn-lang {
     background: transparent;
     border: 1px solid var(--border);
-    color: var(--white);
+    color: var(--text);
     font-size: 13px;
     font-weight: 600;
     padding: 6px 12px;
@@ -1637,7 +1638,7 @@
     font-weight: 800;
 }
 .includes-list strong {
-    color: var(--white);
+            color: var(--text);
 }
 
 @media (max-width: 900px) {

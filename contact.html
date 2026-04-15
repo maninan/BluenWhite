@@ -53,101 +53,101 @@
         <button id="langToggleMobile" class="btn-lang" onclick="toggleLanguage()" style="margin-top:10px;">中文</button>
     </div>
 
-    <!-- ════════ HERO ════════ -->
-    <section class="hero" id="home">
-        <div class="hero-bg"></div>
-        <div class="hero-content">
-            <div class="label hero-tag fadein fadein-1">Smart Modular Living · Changzhou, China</div>
-            <h1 class="fadein fadein-2">Capsule Homes<br><span>Delivered Ready</span><br>to Live In.</h1>
-            <p class="fadein fadein-3">Factory-finished capsule houses for resorts, glamping, residential, and
-                commercial projects. Smart controls built in. Shipped anywhere.</p>
-            <div class="hero-btns fadein fadein-4">
-                <a href="products.html" class="btn-primary">Explore Products</a>
-                <a href="contact.html" class="btn-outline">Get a Quote</a>
+    <!-- ════════ CONTACT ════════ -->
+    <section id="contact">
+        <div class="container">
+            <div class="contact-layout">
+                <div class="contact-info">
+                    <div class="label">Contact Us</div>
+                    <h2>Get in Touch</h2>
+                    <p>Product enquiries, custom project briefs, or general questions — we aim to reply within 24 hours.
+                    </p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                    <polyline points="22,6 12,13 2,6" />
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="contact-label">Email</div>
+                                <div class="contact-val">ridoyrkr@outlook.com</div>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.69 12a19.79 19.79 0 01-3.07-8.67A2 2 0 013.62 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.91 8.6a16 16 0 006.29 6.29l.96-.96a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="contact-label">Phone / WhatsApp</div>
+                                <div class="contact-val">+86 132 2252 5102</div>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="contact-label">Address</div>
+                                <div class="contact-val">Changzhou, Jiangsu, China</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3>Send an Enquiry</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" placeholder="Full name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" placeholder="you@email.com">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="product">Product Interest</label>
+                            <select id="product">
+                                <option value="">Select a model...</option>
+                                <option>E3 — Orbit Cabin (50㎡, 2F)</option>
+                                <option>E5 — Nova Pod (28㎡)</option>
+                                <option>E7 — Stellar Lodge (38㎡)</option>
+                                <option>F5 — Dune Pod (28㎡)</option>
+                                <option>F7 — Ridge Cabin (38㎡)</option>
+                                <option>Zenith Twin — Double Layer</option>
+                                <option>N7 — Forest Cabin (Apple)</option>
+                                <option>H7 — Meadow Pod (Apple)</option>
+                                <option>H3 — Steam Pod (Sauna)</option>
+                                <option>Custom / Bespoke Build</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="units">Number of Units</label>
+                            <input type="text" id="units" placeholder="e.g. 5–10">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Tell us about your project</label>
+                        <textarea id="message"
+                            placeholder="Location, use case (resort, glamping, residential...), timeline, budget range, any special requirements..."></textarea>
+                    </div>
+                    <button class="form-submit" onclick="submitForm()">Send Enquiry →</button>
+                    <p class="form-note">We reply within 24 hours · All enquiries are confidential</p>
+                </div>
             </div>
-        </div>
-        <div class="hero-scroll">
-            <div class="scroll-line"></div>
-            Scroll
         </div>
     </section>
-
-    <!-- TRUST BAR -->
-    <div class="trust-bar">
-        <div class="trust-inner">
-            <div class="trust-item reveal">
-                <div class="trust-num">9+</div>
-                <div class="trust-label">Capsule Models</div>
-            </div>
-            <div class="trust-item reveal">
-                <div class="trust-num">100%</div>
-                <div class="trust-label">Factory Finished</div>
-            </div>
-            <div class="trust-item reveal">
-                <div class="trust-num">Smart</div>
-                <div class="trust-label">Home Built-In</div>
-            </div>
-            <div class="trust-item reveal">
-                <div class="trust-num">Full</div>
-                <div class="trust-label">Interior Fit-Out</div>
-            </div>
-            <div class="trust-item reveal">
-                <div class="trust-num">Global</div>
-                <div class="trust-label">Shipping</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ════════ FEATURES STRIP ════════ -->
-    <div class="features-strip">
-        <div class="container">
-            <div class="label">Included in every unit</div>
-            <h2 style="margin-top:10px;">What You See Is What You Get</h2>
-            <div class="features-grid">
-                <div class="feature-item reveal">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
-                            <polyline points="9 22 9 12 15 12 15 22" />
-                        </svg>
-                    </div>
-                    <h3>Full Interior</h3>
-                    <p>Eco wood floors, marble bathroom, custom vanity, bar area — completely finished.</p>
-                </div>
-                <div class="feature-item reveal">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24">
-                            <rect x="2" y="3" width="20" height="14" rx="2" />
-                            <path d="M8 21h8M12 17v4" />
-                        </svg>
-                    </div>
-                    <h3>Smart Home</h3>
-                    <p>Card-access power, voice control, app door lock, multi-scene lighting — all standard.</p>
-                </div>
-                <div class="feature-icon" style="display:none"></div>
-                <div class="feature-item reveal">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24">
-                            <circle cx="12" cy="12" r="10" />
-                            <polyline points="12 6 12 12 16 14" />
-                        </svg>
-                    </div>
-                    <h3>Ready in Days</h3>
-                    <p>Factory finished and shipped ready. No on-site construction. Move in immediately.</p>
-                </div>
-                <div class="feature-item reveal">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                        </svg>
-                    </div>
-                    <h3>Weather-Proof</h3>
-                    <p>Galvanised steel frame, fluorocarbon aluminium shell, tempered glass — built to last outdoors.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- ════════ FOOTER ════════ -->
     <footer>
