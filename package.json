@@ -5,6 +5,9 @@
     "cors": "^2.8.6",
     "express": "^4.22.1",
     "jsonwebtoken": "^9.0.3",
+    "pdf-lib": "^1.17.1",
+    "pptx": "^0.0.0",
+    "pptxjs": "^0.0.0",
     "sqlite3": "^5.1.7"
   },
   "devDependencies": {

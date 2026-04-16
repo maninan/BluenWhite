@@ -132,7 +132,10 @@ async function loadProducts() {
 
 function openModal(key) {
     const p = products[key];
-    if (!p) return;
+    if (!p) {
+        console.error('Product not found for key:', key);
+        return;
+    }
     
     const modalImg = document.getElementById('modalImg');
     const modalModel = document.getElementById('modalModel');
@@ -378,6 +381,66 @@ function filterProducts(category) {
     });
 }
 
+/* CATALOG DOWNLOAD */
+async function downloadCatalog() {
+    const nameEl = document.getElementById('catalogName');
+    const emailEl = document.getElementById('catalogEmail');
+    
+    if (!nameEl || !emailEl) return;
+    
+    const name = nameEl.value.trim();
+    const email = emailEl.value.trim();
+    
+    if (!name || !email) {
+        alert('Please enter your name and email address.');
+        return;
+    }
+    
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        alert('Please enter a valid email address.');
+        return;
+    }
+    
+    try {
+        // Save enquiry to database
+        const res = await fetch('/api/enquiries', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ 
+                name, 
+                email, 
+                product_interest: 'Catalog Request',
+                message: 'Requested product catalog download'
+            })
+        });
+        
+        const data = await res.json();
+        
+        if (data.success) {
+            // Trigger download
+            const link = document.createElement('a');
+            link.href = '/api/catalog/download';
+            link.download = 'Flower-Smart-Capsule-Homes-Catalog.pptx';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            alert('Thank you, ' + name + '! Your catalog is downloading. We\'ll send you more information shortly.');
+            
+            // Clear form
+            nameEl.value = '';
+            emailEl.value = '';
+        } else {
+            throw new Error('Server error');
+        }
+    } catch (err) {
+        alert('Error processing your request. Please try again.');
+        console.error(err);
+    }
+}
+
 /* GLOBAL EXPORTS */
 window.toggleLanguage   = toggleLanguage;
 window.openModal        = openModal;
@@ -386,3 +449,4 @@ window.closeModalOutside = closeModalOutside;
 window.submitForm       = submitForm;
 window.filterProducts   = filterProducts;
 window.closeMobile      = closeMobile;
+window.downloadCatalog  = downloadCatalog;
