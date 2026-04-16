@@ -642,6 +642,148 @@
             font-size: 13px;
         }
 
+/* ═══════════════════════════════
+   CATALOG
+   ═══════════════════════════════ */
+.catalog-section {
+    background: linear-gradient(to bottom, var(--navy), var(--dark));
+    padding: 96px 0;
+}
+
+.catalog-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 64px;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 64px;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.4);
+}
+
+.catalog-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 80%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 196, 168, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.catalog-content h2 {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.catalog-content p {
+    font-size: 18px;
+    margin-bottom: 32px;
+    max-width: 480px;
+    color: var(--text);
+}
+
+.catalog-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.icon-down {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+    stroke-width: 2;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.catalog-visual {
+    position: relative;
+    height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.catalog-mockup {
+    position: relative;
+    width: 200px;
+    height: 280px;
+    transform: rotate(-5deg);
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.catalog-card:hover .catalog-mockup {
+    transform: rotate(0deg) scale(1.05);
+}
+
+.mockup-page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--white);
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+.mockup-page:nth-child(1) {
+    z-index: 3;
+    background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dim) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mockup-page:nth-child(1)::after {
+    content: 'CATALOG';
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 24px;
+    color: var(--navy);
+    letter-spacing: 0.1em;
+}
+
+.mockup-page:nth-child(2) {
+    z-index: 2;
+    transform: translate(15px, 15px) rotate(5deg);
+    background: var(--light);
+}
+
+.mockup-page:nth-child(3) {
+    z-index: 1;
+    transform: translate(30px, 30px) rotate(10deg);
+    background: var(--border);
+}
+
+@media (max-width: 991px) {
+    .catalog-card {
+        grid-template-columns: 1fr;
+        padding: 40px;
+        gap: 48px;
+        text-align: center;
+    }
+    .catalog-content p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .catalog-visual {
+        height: 280px;
+    }
+    .catalog-mockup {
+        margin-right: 30px; /* Offset for the stacked pages */
+    }
+}
+
+
         /* ═══════════════════════════════
    CUSTOMIZATION
 ═══════════════════════════════ */

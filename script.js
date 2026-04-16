@@ -285,7 +285,12 @@ const zhTranslations = {
     "Floors": "楼层",
     "Guests": "入住人数",
     "Weight": "重量",
-    "View Details →": "查看详情 →"
+    "View Details →": "查看详情 →",
+    "Product Catalog": "产品目录",
+    "Everything You Need": "您需要了解的",
+    "to Know": "一切信息",
+    "Download our 2024 Product Catalog for full specifications, layout options, and pricing details.": "下载我们的 2024 产品目录，获取详细规格、布局选项和价格细节。",
+    "Download Catalog": "下载产品目录"
 };
 
 let currentLang = 'en';
@@ -464,8 +469,8 @@ async function downloadCatalog() {
         if (data.success) {
             // Trigger download
             const link = document.createElement('a');
-            link.href = '/api/catalog/download';
-            link.download = 'Flower-Smart-Capsule-Homes-Catalog.pptx';
+            link.href = '/Catalog.pptx'; // MODIFIED: Point directly to the static file if needed, or keep /api/catalog/download
+            link.download = 'Flower_Smart_Catalog_2024.pptx';
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);

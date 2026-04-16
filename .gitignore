@@ -1,5 +1,9 @@
 node_modules/
-database.sqlite
-.env
 dist/
 .DS_Store
+.env
+database.sqlite
+*.local
+.vscode
+.gemini
+package-lock.json

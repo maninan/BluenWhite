@@ -7,6 +7,19 @@ export default defineConfig({
       '/api': 'http://localhost:3001'
     }
   },
+  plugins: [
+    {
+      name: 'pptx-mime-fix',
+      configureServer(server) {
+        server.middlewares.use((req, res, next) => {
+          if (req.url && req.url.endsWith('.pptx')) {
+            res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.presentationml.presentation');
+          }
+          next();
+        });
+      }
+    }
+  ],
   build: {
     rollupOptions: {
       input: {
