@@ -35,6 +35,22 @@ function closeMobile() {
     if (mobileMenu) mobileMenu.classList.remove('open');
 }
 
+/* FORM VALIDATION UTILITIES */
+function validateEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+function validateName(name) {
+    return name.length >= 2 && name.length <= 100;
+}
+
+function sanitizeInput(str) {
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+}
+
 /* FORM SUBMIT */
 async function submitForm() {
     const nameEl = document.getElementById('name');
@@ -47,30 +63,57 @@ async function submitForm() {
     const units = document.getElementById('units') ? document.getElementById('units').value : '';
     const message = document.getElementById('message') ? document.getElementById('message').value : '';
 
+    // Validation
     if (!name || !email) { 
-        alert('Please enter your name and email address.'); 
+        alert('❌ Please enter your name and email address.'); 
         return; 
+    }
+    
+    if (!validateName(name)) { 
+        alert('❌ Name must be between 2 and 100 characters.'); 
+        return; 
+    }
+
+    if (!validateEmail(email)) { 
+        alert('❌ Please enter a valid email address.'); 
+        return; 
+    }
+
+    if (message.length > 2000) {
+        alert('❌ Message is too long (max 2000 characters).');
+        return;
     }
     
     try {
         const res = await fetch('/api/enquiries', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ name, email, product_interest: product, units, message })
+            body: JSON.stringify({ 
+                name: sanitizeInput(name), 
+                email: sanitizeInput(email), 
+                product_interest: sanitizeInput(product), 
+                units: sanitizeInput(units), 
+                message: sanitizeInput(message)
+            })
         });
+        
+        if (!res.ok) {
+            throw new Error(`Server error: ${res.status}`);
+        }
+        
         const data = await res.json();
         if (data.success) {
-            alert('Thank you, ' + name + '! We\'ve received your enquiry and will reply within 24 hours.');
+            alert('✅ Thank you, ' + name + '! We\'ve received your enquiry and will reply within 24 hours.');
             ['name', 'email', 'product', 'units', 'message'].forEach(id => {
                 const el = document.getElementById(id);
                 if (el) el.value = '';
             });
         } else {
-            throw new Error('Server error');
+            throw new Error(data.error || 'Server error');
         }
     } catch (err) {
-        alert('Error submitting form. Please try again.');
-        console.error(err);
+        alert('❌ Error submitting form: ' + err.message + '. Please try again.');
+        console.error('Form submission error:', err);
     }
 }
 

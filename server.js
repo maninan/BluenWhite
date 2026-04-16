@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
@@ -12,9 +13,10 @@ app.use(express.urlencoded({ extended: true }));
 // Serve static files from current directory
 app.use(express.static(__dirname));
 
-const SECRET_KEY = 'super-secret-admin-key';
-const ADMIN_USER = 'admin';
-const ADMIN_PASS = 'password123';
+// Load credentials from environment variables
+const SECRET_KEY = process.env.JWT_SECRET || 'super-secret-admin-key';
+const ADMIN_USER = process.env.ADMIN_USER || 'admin';
+const ADMIN_PASS = process.env.ADMIN_PASS || 'password123';
 
 // Verify Token Middleware
 function authenticateToken(req, res, next) {
